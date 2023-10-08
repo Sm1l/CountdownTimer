@@ -1,0 +1,18 @@
+.countContainer {
+  // width: 60%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(4, 1fr);
+}
+.title {
+  text-transform: uppercase;
+  letter-spacing: 8px;
+}
+@media (min-width: 768px) {
+  .countContainer {
+    gap: 20px;
+  }
+}

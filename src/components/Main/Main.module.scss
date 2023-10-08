@@ -1,0 +1,26 @@
+.main {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../assets/images/bg-stars.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  flex: 1;
+  gap: 50px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 10px;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 1.4rem;
+  }
+}

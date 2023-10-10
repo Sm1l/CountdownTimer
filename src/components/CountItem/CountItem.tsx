@@ -10,11 +10,7 @@ interface CountItemProps {
 const CountItem: React.FC<CountItemProps> = ({ number, text }) => {
   return (
     <div className={styles.countItem}>
-      <div className={styles.count}>
-        {number < 10 ? `0${number}` : number}
-        <div className={styles.top}></div>
-        <div className={styles.bottom}></div>
-      </div>
+      <div className={styles.count}>{number < 10 ? `0${number}` : number}</div>
       <p className={styles.text}>{text}</p>
     </div>
   );

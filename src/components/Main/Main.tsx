@@ -7,7 +7,7 @@ interface MainProps {}
 
 const Main: React.FC<MainProps> = () => {
   const finalDate: number = +new Date("2024 Jan 1 00:00:00");
-  // const finalDate = +new Date("2023 Oct 9 20:08:40");
+  // const finalDate = +new Date("2023 Oct 9 23:58:00");
   const [countIsVisible, setCountIsVisible] = useState(true);
 
   return (

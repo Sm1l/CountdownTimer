@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import styles from "./CountContainer.module.scss";
-import { CountItem } from "../CountItem";
+import { MemoizedCountItemCalendar } from "../CountItemCalendar";
+// import CountItemCalendar from "../CountItemCalendar/CountItemCalendar";
 
 interface CountContainerProps {
   finalDate: number;
@@ -17,7 +18,6 @@ const CountContainer: React.FC<CountContainerProps> = ({ finalDate, setCountIsVi
       const interval = setInterval(() => {
         setTimeLeft((timeLeft) => (timeLeft >= 1000 ? finalDate - Date.now() : 0));
         setCountIsVisible(finalDate > Date.now());
-        console.log("setInterval");
       }, 1000);
       return () => clearInterval(interval);
     }
@@ -37,10 +37,10 @@ const CountContainer: React.FC<CountContainerProps> = ({ finalDate, setCountIsVi
 
   return (
     <div className={styles.countContainer}>
-      <CountItem number={days} text="days" />
-      <CountItem number={hours} text="hours" />
-      <CountItem number={minutes} text="minutes" />
-      <CountItem number={seconds} text="seconds" />
+      <MemoizedCountItemCalendar number={days} text="days" />
+      <MemoizedCountItemCalendar number={hours} text="hours" />
+      <MemoizedCountItemCalendar number={minutes} text="minutes" />
+      <MemoizedCountItemCalendar number={seconds} text="seconds" />
     </div>
   );
 };

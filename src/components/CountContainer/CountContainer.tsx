@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 import styles from "./CountContainer.module.scss";
 import { MemoizedCountItemCalendar } from "../CountItemCalendar";
-// import CountItemCalendar from "../CountItemCalendar/CountItemCalendar";
 
 interface CountContainerProps {
   finalDate: number;
@@ -36,12 +36,17 @@ const CountContainer: React.FC<CountContainerProps> = ({ finalDate, setCountIsVi
   }, [timeLeft]);
 
   return (
-    <div className={styles.countContainer}>
+    <motion.div
+      initial={{ x: 3000 }}
+      animate={{ x: 0 }}
+      transition={{ delay: 1, duration: 1, type: "spring" }}
+      className={styles.countContainer}
+    >
       <MemoizedCountItemCalendar number={days} text="days" />
       <MemoizedCountItemCalendar number={hours} text="hours" />
       <MemoizedCountItemCalendar number={minutes} text="minutes" />
       <MemoizedCountItemCalendar number={seconds} text="seconds" />
-    </div>
+    </motion.div>
   );
 };
 

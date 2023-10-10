@@ -18,7 +18,7 @@ const CountItemCalendar: React.FC<CountItemCalendarProps> = ({ number, text }) =
   };
 
   return (
-    <div className={styles.countItemCalendar}>
+    <motion.div className={styles.countItemCalendar}>
       <div className={styles.count}>
         <div className={styles.top}>{number < 10 ? `0${number}` : number}</div>
         <div className={styles.bottom}>{prevNum(number) < 10 ? `0${prevNum(number)}` : prevNum(number)}</div>
@@ -42,7 +42,7 @@ const CountItemCalendar: React.FC<CountItemCalendarProps> = ({ number, text }) =
         </motion.div>
       </div>
       <p className={styles.text}>{text}</p>
-    </div>
+    </motion.div>
   );
 };
 

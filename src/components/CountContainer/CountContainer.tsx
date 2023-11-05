@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import styles from "./CountContainer.module.scss";
-import { MemoizedCountItemCalendar } from "../CountItemCalendar";
+import { CountItemCalendar } from "../CountItemCalendar";
 
 interface CountContainerProps {
   finalDate: number;
@@ -42,10 +42,10 @@ const CountContainer: React.FC<CountContainerProps> = ({ finalDate, setCountIsVi
       transition={{ delay: 1, duration: 1, type: "spring" }}
       className={styles.countContainer}
     >
-      <MemoizedCountItemCalendar number={days} text="days" />
-      <MemoizedCountItemCalendar number={hours} text="hours" />
-      <MemoizedCountItemCalendar number={minutes} text="minutes" />
-      <MemoizedCountItemCalendar number={seconds} text="seconds" />
+      <CountItemCalendar number={days} text="day" />
+      <CountItemCalendar number={hours} text="hour" />
+      <CountItemCalendar number={minutes} text="minute" />
+      <CountItemCalendar number={seconds} text="second" />
     </motion.div>
   );
 };
